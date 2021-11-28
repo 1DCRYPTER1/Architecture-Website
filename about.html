@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<title>PV ARchitects</title>
+
+	<link rel="shortcut icon" href="favicon.ico"/>
+	
+	<style>
+		body {
+		  margin: 1;
+		  font-family: Arial, Helvetica, sans-serif;
+		}
+		
+		.topnav {
+		  overflow: hidden;
+		  background-color: #333;
+		  position: relative;
+		  z-index: 1;
+		}
+		
+		.topnav a {
+		  float: left;
+		  display: block;
+		  color: #f2f2f2;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		  font-size: 17px;
+		}
+		
+		.topnav a:hover {
+		  background-color: #ddd;
+		  color: black;
+		}
+		
+		.topnav a.active {
+		  background-color: rgba(133, 214, 52, 0.925);
+		  color: white;
+		}
+		
+		.topnav .icon {
+		  display: none;
+		}
+		
+		@media screen and (max-width: 600px) {
+		  .topnav a:not(:first-child) {display: none;}
+		  .topnav a.icon {
+			float: right;
+			display: block;
+		  }
+		}
+		
+		@media screen and (max-width: 600px) {
+		  .topnav.responsive {position: relative;}
+		  .topnav.responsive .icon {
+			position: absolute;
+			right: 0;
+			top: 0;
+		  }
+		  .topnav.responsive a {
+			float: none;
+			display: block;
+			text-align: left;
+		  }
+		}
+
+		.social-link {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  border-radius: 50%;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background: #ddd;
+  text-decoration: none;
+  color: #555;
+}
+
+</style>
+
+
+<style type="text/css">
+	
+	.bounce-in-top {
+	-webkit-animation: bounce-in-top 1.1s both;
+	        animation: bounce-in-top 1.1s both;
+}
+
+@-webkit-keyframes bounce-in-top {
+  0% {
+    -webkit-transform: translateY(-500px);
+            transform: translateY(-500px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateY(-65px);
+            transform: translateY(-65px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateY(-28px);
+            transform: translateY(-28px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+@keyframes bounce-in-top {
+  0% {
+    -webkit-transform: translateY(-500px);
+            transform: translateY(-500px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateY(-65px);
+            transform: translateY(-65px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateY(-28px);
+            transform: translateY(-28px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+
+</style>
+
+<style type="text/css">
+	
+	.tracking-in-contract-bck {
+	-webkit-animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@-webkit-keyframes tracking-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+            transform: translateZ(400px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+            transform: translateZ(400px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+	
+		canvas {  
+  		position: absolute;
+  		top: 0;
+  		left: 0;
+  		z-index:0;
+  		opacity: 0.2;
+}
+
+
+</style>
+
+	<link rel="stylesheet" type="text/css" href="abc.css">
+  
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <div class="KW_progressContainer">
+      <div class="KW_progressBar">
+      </div>
+	</div>
+
+	<canvas id=c> 
+  </canvas>
+
+	<div class="topnav" id="myTopnav">
+		<a href="index.html">Home</a>
+		<a href="about.html" class="active">About</a>
+		<a href="services.html">Services</a>
+		<a href="gallery.html">Portfolio</a>
+		<a href="contact.html">Contact</a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		  <i class="fa fa-bars"></i>
+		</a>
+	  </div>
+	
+
+<div style="background-color: #121212" >
+  <div class="container py-5">
+    <div class="row h-100 align-items-center py-5">
+      <div class="col-lg-6">
+        <h1 class="display-4 tracking-in-contract-bck">About Us</h1>
+        <div style="text-align: justify;">
+        <p style="font-size:15px;" class="lead text-muted">
+		        	PV Architecture & Interior Design was established in 2019, Our Principal Architect Mr. Prathmesh Vanmali after his graduation worked with Ar. Hafeez Contractor & Ar. Snehal Parekh and Associates. He also has an international exposure working in Dubai, UAE.
+
+
+				  Our work focuses on creating relationship between people & the built spaces through new concepts with constant innovation & a continuous process of design appraisal of our own work thus creating more civilized & successful built environment with our architectural design in various sectors from villas, bungalows, residential buildings, urban design, and townships to IT buildings, commercial development, retail & hospitality design.
+
+				  Constant interaction & exchanging ideas with clients help us live it to their expectation & delivering the best & most innovative design solutions in all terms from best design product for the actual user to optimum commercial returns for our clients.
+        </p>
+        </div>
+      </div>
+      <div class="col-lg-6 d-none d-lg-block bounce-in-top"><img style="opacity: 0.5" src="person_1.png" alt="" class="img-fluid"></div>
+    </div>
+  </div>
+</div>
+<!--
+<div class="bg-white py-5">
+  <div class="container py-5">
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6 order-2 order-lg-1"><i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
+        <h2 class="font-weight-light">Lorem ipsum dolor sit amet</h2>
+        <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a href="#" class="btn btn-light px-5 rounded-pill shadow-sm">Learn More</a>
+      </div>
+      <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556834139/img-1_e25nvh.jpg" alt="" class="img-fluid mb-4 mb-lg-0"></div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-lg-5 px-5 mx-auto"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556834136/img-2_vdgqgn.jpg" alt="" class="img-fluid mb-4 mb-lg-0"></div>
+      <div class="col-lg-6"><i class="fa fa-leaf fa-2x mb-3 text-primary"></i>
+        <h2 class="font-weight-light">Lorem ipsum dolor sit amet</h2>
+        <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a href="#" class="btn btn-light px-5 rounded-pill shadow-sm">Learn More</a>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+<div style="background-color: #121212">
+  <div class="container py-5">
+    <div class="row mb-4">
+      <div class="col-lg-5">
+        <h2 class="display-4 font-weight-light">Our Team</h2>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <!-- Team item-->
+      <div class="col-xl-3 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="/staff/ceo.jpeg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 style="color: black;" class="mb-0">Ar. Prathmesh Vanmali</h5><span class="small text-muted">CEO - Founder</span><!--
+          <ul class="social mb-0 list-inline mt-3">
+            <li class="list-inline-item"><a href="https://www.facebook.com/pvarchitect/?modal=admin_todo_tour" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.instagram.com/prathmesh_vanmali/" class="social-link"><i class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.linkedin.com/in/ar-prathmesh-vanmali-805950100" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+          </ul>-->
+        </div>
+      </div>
+      <!-- End-->
+
+      <!-- Team item-->
+      <div class="col-xl-3 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="/staff/interior_designer1.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 style="color: black;" class="mb-0">Aishwarya Nirgun</h5><span class="small text-muted">Interior Designer</span><!--
+          <ul class="social mb-0 list-inline mt-3">
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+          </ul>-->
+        </div>
+      </div>
+      <!-- End-->
+
+      <!-- Team item-->
+      <div class="col-xl-3 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="/staff/Jr_CivilEngg.jpeg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 style="color: black;" class="mb-0">Abhishek Multani</h5><span class="small text-muted">Jr. Civil Engineer</span><!--
+          <ul class="social mb-0 list-inline mt-3">
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+          </ul>-->
+        </div>
+      </div>
+      <!-- End-->
+      
+      <!-- Team item-->
+      <div class="col-xl-3 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="/staff/interior_designer.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 style="color: black;" class="mb-0">Muskan Jolly</h5><span class="small text-muted">Interior Designer</span><!--
+          <ul class="social mb-0 list-inline mt-3">
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+          </ul>-->
+        </div>
+      </div>
+      <!-- End-->
+    </div>
+  </div>
+</div>
+
+    
+      <footer class="ftco-footer ftco-bg-dark ftco-section">
+        <div class="container">
+          <div class="row mb-5 justify-content-center">
+            <div class="col-md-5 text-center">
+              <div class="ftco-footer-widget mb-5">
+                <ul class="ftco-footer-social list-unstyled">
+                  <li class="ftco-animate"><a href="https://www.facebook.com/pvarchitect/?modal=admin_todo_tour"><span class="icon-facebook"></span></a></li>
+                  <li class="ftco-animate"><a href="https://www.instagram.com/prathmesh_vanmali/"><span class="icon-instagram"></span></a></li>
+                </ul>
+              </div>
+              <div style="align-content: center;" class="ftco-footer-widget">
+                <h2 class="mb-3">Contact Us</h2>
+                <p class="h3 email"><a href="#">pvarchitects04@gmail.com</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+
+              <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Designed by Shaun Dsilva <i class="icon-heart" aria-hidden="true" style="color: red;"></i>
+      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- loader -->
+      <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+      </div>
+
+    </div>
+
+     <script type="text/javascript">
+      
+      function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}      
+    </script>
+
+    <script type="text/javascript">
+	var w = c.width = window.innerWidth,
+    h = c.height = window.innerHeight,
+    ctx = c.getContext( '2d' ),
+    
+    minDist = 10,
+    maxDist = 30,
+    initialWidth = 10,
+    maxLines = 100,
+    initialLines = 4,
+    speed = 5,
+    
+    lines = [],
+    frame = 0,
+    timeSinceLast = 0,
+    
+    dirs = [
+   // straight x, y velocity
+      [ 0, 1 ],
+      [ 1, 0 ],
+      [ 0, -1 ],
+    	[ -1, 0 ],
+   // diagonals, 0.7 = sin(PI/4) = cos(PI/4)
+      [ .7, .7 ],
+      [ .7, -.7 ],
+      [ -.7, .7 ],
+      [ -.7, -.7]
+    ],
+    starter = { // starting parent line, just a pseudo line
+      
+      x: w / 2,
+      y: h / 2,
+      vx: 0,
+      vy: 0,
+      width: initialWidth
+    };
+
+function init() {
+  
+  lines.length = 0;
+  
+  for( var i = 0; i < initialLines; ++i )
+    lines.push( new Line( starter ) );
+  
+  ctx.fillStyle = '#222';
+  ctx.fillRect( 0, 0, w, h );
+  
+  // if you want a cookie ;)
+  // ctx.lineCap = 'round';
+}
+function getColor( x ) {
+  
+  return 'hsl( hue, 80%, 50% )'.replace(
+  	'hue', x / w * 360 + frame
+  );
+}
+function anim() {
+  
+  window.requestAnimationFrame( anim );
+  
+  ++frame;
+  
+  ctx.shadowBlur = 0;
+  ctx.fillStyle = 'rgba(0,0,0,.02)';
+  ctx.fillRect( 0, 0, w, h );
+  ctx.shadowBlur = .5;
+  
+  for( var i = 0; i < lines.length; ++i ) 
+    
+    if( lines[ i ].step() ) { // if true it's dead
+      
+      lines.splice( i, 1 );
+      --i;
+      
+    }
+  
+  // spawn new
+  
+  ++timeSinceLast
+  
+  if( lines.length < maxLines && timeSinceLast > 10 && Math.random() < .5 ) {
+    
+    timeSinceLast = 0;
+    
+    lines.push( new Line( starter ) );
+    
+    // cover the middle;
+    ctx.fillStyle = ctx.shadowColor = getColor( starter.x );
+    ctx.beginPath();
+    ctx.arc( starter.x, starter.y, initialWidth, 0, Math.PI * 2 );
+    ctx.fill();
+  }
+}
+
+function Line( parent ) {
+  
+  this.x = parent.x | 0;
+  this.y = parent.y | 0;
+  this.width = parent.width / 1.25;
+  
+  do {
+    
+    var dir = dirs[ ( Math.random() * dirs.length ) |0 ];
+    this.vx = dir[ 0 ];
+    this.vy = dir[ 1 ];
+    
+  } while ( 
+    ( this.vx === -parent.vx && this.vy === -parent.vy ) || ( this.vx === parent.vx && this.vy === parent.vy) );
+  
+  this.vx *= speed;
+  this.vy *= speed;
+  
+  this.dist = ( Math.random() * ( maxDist - minDist ) + minDist );
+  
+}
+Line.prototype.step = function() {
+  
+  var dead = false;
+  
+  var prevX = this.x,
+      prevY = this.y;
+  
+  this.x += this.vx;
+  this.y += this.vy;
+  
+  --this.dist;
+  
+  // kill if out of screen
+  if( this.x < 0 || this.x > w || this.y < 0 || this.y > h )
+    dead = true;
+  
+  // make children :D
+  if( this.dist <= 0 && this.width > 1 ) {
+    
+    // keep yo self, sometimes
+    this.dist = Math.random() * ( maxDist - minDist ) + minDist;
+    
+    // add 2 children
+    if( lines.length < maxLines ) lines.push( new Line( this ) );
+    if( lines.length < maxLines && Math.random() < .5 ) lines.push( new Line( this ) );
+    
+    // kill the poor thing
+    if( Math.random() < .2 ) dead = true;
+  }
+  
+  ctx.strokeStyle = ctx.shadowColor = getColor( this.x );
+  ctx.beginPath();
+  ctx.lineWidth = this.width;
+  ctx.moveTo( this.x, this.y );
+  ctx.lineTo( prevX, prevY );
+  ctx.stroke();
+  
+  if( dead ) return true
+}
+
+init();
+anim();
+
+window.addEventListener( 'resize', function() {
+  
+  w = c.width = window.innerWidth;
+  h = c.height = window.innerHeight;
+  starter.x = w / 2;
+  starter.y = h / 2;
+  
+  init();
+} )
+</script>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="js/google-map.js"></script>
+    <script src="js/main.js"></script>
+    
+  </body>
+</html>

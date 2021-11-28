@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+  	<link rel="shortcut icon" href="favicon.ico"/>
+
+
+    <title>PV Architects</title>
+
+    <style type="text/css">
+        .bounce-in-top {
+  -webkit-animation: bounce-in-top 1.1s both;
+          animation: bounce-in-top 1.1s both;
+}
+
+@-webkit-keyframes bounce-in-top {
+  0% {
+    -webkit-transform: translateY(-500px);
+            transform: translateY(-500px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateY(-65px);
+            transform: translateY(-65px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateY(-28px);
+            transform: translateY(-28px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+@keyframes bounce-in-top {
+  0% {
+    -webkit-transform: translateY(-500px);
+            transform: translateY(-500px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateY(-65px);
+            transform: translateY(-65px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateY(-28px);
+            transform: translateY(-28px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+    </style>
+
+    <style>
+      body {
+        width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  padding: 0px;
+  margin: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      
+      .topnav {
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+      }
+
+      .rotate-scale-up {
+	-webkit-animation: rotate-scale-up 1.80s linear both;
+	        animation: rotate-scale-up 1.80s linear both;
+		}
+		@-webkit-keyframes rotate-scale-up {
+  0% {
+    -webkit-transform: scale(1) rotateZ(0);
+            transform: scale(1) rotateZ(0);
+  }
+  50% {
+    -webkit-transform: scale(1.25) rotateZ(180deg);
+            transform: scale(1.25) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateZ(360deg);
+            transform: scale(1) rotateZ(360deg);
+  }
+}
+@keyframes rotate-scale-up {
+  0% {
+    -webkit-transform: scale(1) rotateZ(0);
+            transform: scale(1) rotateZ(0);
+  }
+  50% {
+    -webkit-transform: scale(1.25) rotateZ(180deg);
+            transform: scale(1.25) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateZ(360deg);
+            transform: scale(1) rotateZ(360deg);
+  }
+}
+
+     .myDiv{
+        align-content: center;
+        height: 20%;
+        width: 20%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .loader1{
+
+          position: fixed;
+          z-index: 99;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: black;
+          display:flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      .loader1 > img {
+
+          width: 100px;
+
+      }
+
+      .loader1.hidden{
+
+        animation: fadeOut 1s;
+        animation-fill-mode: forwards;
+
+      }
+
+      @keyframes fadeOut {
+
+        100%{
+
+            opacity: 0;
+            visibility: hidden;
+
+        } 
+
+      }
+
+
+      .float{
+      position:fixed;
+      width:60px;
+      height:60px;
+      bottom:40px;
+      right:40px;
+      background-color:#25d366;
+      color:#FFF;
+      border-radius:50px;
+      text-align:center;
+      font-size:30px;
+      z-index:100;
+    }
+
+.my-float{
+  margin-top:16px;
+}
+
+      .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 13px 15px;
+        text-decoration: none;
+        font-size:12px;
+      }
+      
+      .topnav a:hover {
+        background-color: #d3ffb3;
+        color: black;
+      }
+      
+      .topnav a.active {
+        background-color: rgba(133, 214, 52, 0.925);
+        color: white;
+      }
+      
+      .topnav .icon {
+        display: none;
+      }
+      
+      @media screen and (max-width: 200px) {
+        .topnav a:not(:first-child) {display: none;}
+        .topnav a.icon {
+          float: right;
+          display: block;
+        }
+      }
+      
+      @media screen and (max-width: 200px) {
+        .topnav.responsive {position: relative;}
+        .topnav.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+
+        .topnav.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+      }
+		canvas {  
+  			position: absolute;
+  			top: 0;
+  			left: 0;
+  			z-index:-1;
+  			opacity: 0.2;
+}
+
+.focus-in-contract-bck {
+  -webkit-animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes focus-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(300px);
+            transform: translateZ(300px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(12px);
+            transform: translateZ(12px);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes focus-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(300px);
+            transform: translateZ(300px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(12px);
+            transform: translateZ(12px);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.services123 {
+
+	max-width: 100%;
+  	height: auto;
+
+}
+
+.temp12{
+   background-size: contain;
+   resize: both;
+   overflow: scroll;
+}
+
+
+
+      </style>
+
+      <link rel="stylesheet" type="text/css" href="abc.css">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a href="https://api.whatsapp.com/send?phone=+919970804313&text=Hello!" class="float bounce-in-top" target="_blank">
+<i class="fa fa-whatsapp my-float"></i>
+</a>
+
+<!--
+     <div class="loader1">
+      <img src="loading.gif" alt="Loading..." />
+     </div> -->
+  
+
+    <div class="KW_progressContainer">
+      <div class="KW_progressBar">
+      </div>
+    </div> 
+
+   <canvas id=c> 
+  </canvas>
+    <div class="topnav" id="myTopnav">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div> 
+
+
+
+    <!--
+    <div class="page">
+    <nav id="colorlib-main-nav" role="navigation">
+      <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
+      <div class="js-fullheight colorlib-table">
+        <div class="img" style="background-image: url(images/author-2.jpg);"></div>
+        <div class="colorlib-table-cell js-fullheight">
+          <div class="row no-gutters">
+            <div class="col-md-12 text-center">
+              <h1 class="mb-4"><a style="color: chartreuse;" href="index.html" class="logo">PV ARCHITECTS</a></h1>
+              <ul>
+                <li class="active"><a href="index.html"><span>Home</span></a></li>
+                <li><a href="about.html"><span>About</span></a></li>
+                <li><a href="services.html"><span>Services</span></a></li>
+                <li><a href="portfolio.html"><span>Portfolio</span></a></li>
+                <li><a href="contact.html"><span>Contact</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+    <div id="colorlib-page">
+      <header>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="colorlib-navbar-brand">
+                <a class="colorlib-logo" href="index.html"><span class="logo-img" style="background-image: url(images/person_1.png);"></span>PV ARCHITECTS</a>
+              </div>
+              <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+            </div>
+          </div>
+        </div>
+      </header>
+          -->
+
+
+      <section class="home-slider owl-carousel js-fullheight">
+        <div class="slider-item js-fullheight">
+          <div class="overlay"></div>
+            <div class="row slider-text align-items-center text-center justify-content-center" data-scrollax-parent="true">
+              <div class="col-md-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                <!--<p><a href="#" class="scroll">Hello! I'm</a></p>-->
+                <div class="myDiv ">
+                <img src="person_1.png" class="mb-3 rotate-scale-up" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"></img>
+                </div>
+                <h1 style="font-family: Big Caslon; font-size: 3.5vw;" class="mb-3 " data-scrollax="properties: { translateY: '70%', opacity: 1.6 }">PV Architecture & Interior Design</h1>
+                <!--<h2 style="font-family: Adobe Garamond Pro; margin-left: 10px; margin-right: 10px; font-size: 40px; color: white;" class="focus-in-contract-bck" data-scrollax="properties: { translateY: '70%', opacity: 1.6 }">Ar. Prathmesh Vanmali</h2>-->
+              </div>
+          </div>
+        </div>
+        <div class="slider-item js-fullheight">
+          <div class="overlay"></div>
+          <div class="container">
+            <div class="row slider-text align-items-center text-center justify-content-center" data-scrollax-parent="true">
+              <div class="col-md-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                <h1 style="font-family: Big Caslon; font-size: 3.5vw;" class="mb-3" data-scrollax="properties: {translateY: '30%', opacity: 1.6}">Ar.Prathmesh Vanmali</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-item js-fullheight">
+          <div class="overlay"></div>
+            <div class="row slider-text align-items-center text-center justify-content-center" data-scrollax-parent="true">
+              <div class="col-md-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                <div><img src="entry-1.jpg" class="mb-3"></img></div>
+              </div>
+          </div>
+        </div>
+        <div class="slider-item js-fullheight">
+          <div class="overlay"></div>
+            <div class="row slider-text align-items-center text-center justify-content-center" data-scrollax-parent="true">
+              <div class="col-md-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                <div><img src="entry-2.jpg" class="mb-3"></img></div>
+              </div>
+          </div>
+        </div>
+        
+    
+      </section>
+  
+      <!-- END slider -->
+
+      <section class="ftco-section about-section">
+        <div class="container">
+          <div class="row d-flex" data-scrollax-parent="true">
+            <div class="col-md-4 author-img" style="background-image: url(staff/ceo.jpeg);" data-scrollax=" properties: { translateY: '-70%'}"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-6 wrap ftco-animate">
+              <div class="about-desc">
+                <h1 class="bold-text">About</h1>
+                <div style="text-align: justify;" class="p-5">
+                  <div style="text-align: left;">
+                    <h2 style="line-height: 0.9cm" class="mb-5">Prathmesh P. Vanmali</h2>
+                    <h5 style="color: white;">Founder, Principal Architect</h5>
+                  </div>
+                  <br>
+                  <p>Prathmesh is a young qualified Architect graduated from Kamla Raheja Institute for Architecture & Environmental Studies (KRVIA), Registered with the Council of Architecture (COA), India. He has practiced in Mumbai and has a collective professional experience working with well known architects like Ar. Hafeez contractor, Ar. Snehal Parekh. He also has an international exposure working on Dubai and UAE based projects in collaboration with Er.Khaleel.
+
+                  Prathmesh is a passionate designer who is as interested in the challenges of solving design problems as he is in building relationships with the people who share his passion.
+                  He is understanding and extremely sensitive towards client's finer requirements,  budget of the project and time constraints.</p>
+                  <!--<ul class="ftco-footer-social list-unstyled mt-4">
+                    <li><a href="#"><span class="icon-twitter"></span></a></li>
+                    <li><a href="https://www.facebook.com/pvarchitect/?modal=admin_todo_tour"><span class="icon-facebook"></span></a></li>
+                    <li><a href="https://www.instagram.com/prathmesh_vanmali/"><span class="icon-instagram"></span></a></li>
+                  </ul>
+                  <h5>Contact me here!</h5>
+                  <p>Email: <a href= "mailto : pvarchitects04@gmail.com">pvarchitects04@gmail.com</a></p>
+                  <p>Phone: <a href="#">99708 04313</a></p>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="ftco-section">
+        <div class="container">
+          <div class="row justify-content-center mb-5 pb-5">
+            <div class="col-md-7 text-center heading-section ftco-animate">
+              <h2>Services We Provide</h2>   
+          </div>
+          </div>
+
+          <!--
+          <div>
+          	<img class="services123" src="services123.png">
+          </div>-->
+          
+          <div class="row">
+            <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+              <div class="media block-6 services p-3 py-4 d-block text-center">
+                <div class="icon mb-3">
+                  <img class = "icon-code" style="height: 60%; width: 60%;" src="\prath_projects\services\architect.png">
+                  <h3 class="heading">Architecture</h3>
+                  </div>
+              </div>      
+            </div>
+            <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+              <div class="media block-6 services p-3 py-4 d-block text-center">
+                <div class="icon mb-3">
+                  <img class = "icon-code" style="height: 60%; width: 60%;" src="\prath_projects\services\interior.png">
+                  <h3 class="heading">Interior Designing</h3>
+                </div>
+              </div>      
+            </div>
+            <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+              <div class="media block-6 services p-3 py-4 d-block text-center">
+                <div class="icon mb-3">
+                  <img class = "icon-code" style="height: 60%; width: 60%;" src="\prath_projects\services\structural.png">
+                </div>
+                  <h3 class="heading">Structural Design</h3>
+              </div>    
+            </div>
+            <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+              <div class="media block-6 services p-3 py-4 d-block text-center">
+                <div class="icon mb-3">
+                  <img class = "icon-code" style="height: 60%; width: 60%;" src="\prath_projects\services\management.png">
+                </div>
+                  <h3 class="heading">Project Management</h3>
+              </div>    
+            </div>
+            <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+              <div class="media block-6 services p-3 py-4 d-block text-center">
+                <div class="icon mb-3">
+                  <img class = "icon-code" style="height: 60%; width: 60%;" src="\prath_projects\services\construction.png">
+                </div>
+                  <h3 class="heading">Construction</h3>
+              </div>    
+            </div>
+            <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+              <div class="media block-6 services p-3 py-4 d-block text-center">
+                <div class="icon mb-3">
+                  <img class = "icon-code" style="height: 60%; width: 60%;" src="\prath_projects\services\graphic_design.png">
+                </div>
+                  <h3 class="heading">Graphic Design</h3>
+              </div>    
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ftco-section">
+        <div class="container">
+          <div class="row justify-content-center mb-5 pb-5">
+            <div class="col-md-7 text-center heading-section ftco-animate">
+              <!--<span>Portfolio</span>-->
+              <h2>ONGOING PROJECTS</h2>
+            </div>
+          </div>
+          <div class="row no-gutters">
+          <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
+            <a href="gallery.html" class="image d-flex justify-content-center align-items-center" style="background-image: url('images/work-1.jpg'); " data-scrollax=" properties: { translateY: '-30%'}">
+              <div class="icon d-flex text-center justify-content-center align-items-center">
+                <span class="icon-search"></span>
+              </div>
+            </a>
+            <div class="text">
+              <h2 class="heading"><a href="portfolio-single.html">Private Residence</a></h2>
+              <p style="text-align: justify;">The edge of the bungalow which comes in first contact with visitor, Consciously designed with building structure having fine lines and continuity without adding any special elevation element and the lightings  to make it look more luxurious with the glimpse of marble and wood.
+			  Overall design showcasing a contemporary look</p>
+            </div>
+          </div>
+          <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
+            <a href="gallery.html" class="image order-2 d-flex justify-content-center align-items-center" style="background-image: url('images/work-2.jpg'); " data-scrollax=" properties: { translateY: '-30%'}">
+              <div class="icon d-flex text-center justify-content-center align-items-center">
+                <span class="icon-search"></span>
+              </div>
+            </a>
+            <div class="text order-1">
+              <h2 class="heading"><a href="portfoli-singleo.html">Luxury Living</a></h2>
+              <p>Party from home (PFH)
+				A private residence with Customised ceiling in glass finished with the central panel behaving as chandelier. 
+				Mix of glass , veneer , golden lines , lightings , acrylics, pvc and many other combing to give a luxury feel .</p>
+            </div>
+          </div>
+          <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
+            <a href="gallery.html" class="image d-flex justify-content-center align-items-center" style="background-image: url('images/work-3.jpg'); " data-scrollax=" properties: { translateY: '-30%'}">
+              <div class="icon d-flex text-center justify-content-center align-items-center">
+                <span class="icon-search"></span>
+              </div>
+            </a>
+            <div class="text">
+              <h2 class="heading"><a href="portfolio-single.html">The Heart of every Home - Kitchen</a></h2>
+              <p>Space designed consciously with use of Italian imported marble in beige, luxury ceramic plates used in brown and back painted glass finish mixed with wood to experience the luxury ambience of kitchen with lighting effects designed separately.</p>
+            </div>
+          </div>
+          <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
+            <a href="gallery.html" class="image order-2 d-flex justify-content-center align-items-center" style="background-image: url('images/work-4.jpg'); " data-scrollax=" properties: { translateY: '-30%'}">
+              <div class="icon d-flex text-center justify-content-center align-items-center">
+                <span class="icon-search"></span>
+              </div>
+            </a>
+            <div class="text order-1">
+              <h2 class="heading"><a href="portfoli-singleo.html">Commercial Projects</a></h2>
+              <p>Make it Simple but Significant - 
+				One of our Commercial On-Going project at Mira road, Mumbai, India. 
+				Glimpse of Master cabin designed with mix of woods and grey touch with minimal rafters and mirrors .</p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <section class="ftco-section ftco-counter" id="section-counter">
+        <div class="container">
+          <div class="row d-flex justify-content-start">
+            <div class="col-md-5 col-sm-5 counter-wrap ftco-animate">
+              <div class="block-18">
+                <div class="text">
+                  <h1 style="font-size: 30px;" class="ftco-label">Clientele</h1>
+                  <strong style="color: #7fca34" class="number" data-number="50">0</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--<div class="row d-flex justify-content-center">
+            <div class="col-md-5 col-sm-5 counter-wrap ftco-animate">
+              <div class="block-18">
+                <div class="text">
+                  <span class="ftco-label">Project done</span>
+                  <strong style="color: #7fca34" class="number" data-number="50">0</strong>
+                </div>
+              </div>
+            </div>
+          </div>-->
+          <div class="row d-flex justify-content-end">
+            <div class="col-md-5 counter-wrap ftco-animate">
+              <div class="block-18">
+                <div class="text">
+                  <h1 style="font-size: 30px;" class="ftco-label">Projects Done</h1>
+                  <strong style="color: #7fca34" class="number" data-number="50">0</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <footer class="ftco-footer ftco-bg-dark ftco-section">
+        <div class="container">
+          <div class="row mb-5 justify-content-center">
+            <div class="col-md-5 text-center">
+              <div class="ftco-footer-widget mb-5">
+                <ul class="ftco-footer-social list-unstyled">
+                  <li class="ftco-animate"><a href="https://www.facebook.com/pvarchitect/?modal=admin_todo_tour"><span class="icon-facebook"></span></a></li>
+                  <li class="ftco-animate"><a href="https://www.instagram.com/prathmesh_vanmali/"><span class="icon-instagram"></span></a></li>
+                </ul>
+              </div>
+              <div class="ftco-footer-widget">
+                <h2 class="mb-3">Contact Us</h2>
+                <p class="h3 email"><a href="#">pvarchitects04@gmail.com</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+
+      <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Developed by Shaun Dsilva <i class="icon-heart" aria-hidden="true" style="color: red;"></i>
+      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- loader -->
+      <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+      </div>
+
+    </div>
+    <script type="text/javascript">
+	var w = c.width = window.innerWidth,
+    h = c.height = window.innerHeight,
+    ctx = c.getContext( '2d' ),
+    
+    minDist = 10,
+    maxDist = 30,
+    initialWidth = 10,
+    maxLines = 100,
+    initialLines = 4,
+    speed = 5,
+    
+    lines = [],
+    frame = 0,
+    timeSinceLast = 0,
+    
+    dirs = [
+   // straight x, y velocity
+      [ 0, 1 ],
+      [ 1, 0 ],
+      [ 0, -1 ],
+    	[ -1, 0 ],
+   // diagonals, 0.7 = sin(PI/4) = cos(PI/4)
+      [ .7, .7 ],
+      [ .7, -.7 ],
+      [ -.7, .7 ],
+      [ -.7, -.7]
+    ],
+    starter = { // starting parent line, just a pseudo line
+      
+      x: w / 2,
+      y: h / 2,
+      vx: 0,
+      vy: 0,
+      width: initialWidth
+    };
+
+function init() {
+  
+  lines.length = 0;
+  
+  for( var i = 0; i < initialLines; ++i )
+    lines.push( new Line( starter ) );
+  
+  ctx.fillStyle = '#222';
+  ctx.fillRect( 0, 0, w, h );
+  
+  // if you want a cookie ;)
+  // ctx.lineCap = 'round';
+}
+function getColor( x ) {
+  
+  return 'hsl( hue, 80%, 50% )'.replace(
+  	'hue', x / w * 360 + frame
+  );
+}
+function anim() {
+  
+  window.requestAnimationFrame( anim );
+  
+  ++frame;
+  
+  ctx.shadowBlur = 0;
+  ctx.fillStyle = 'rgba(0,0,0,.02)';
+  ctx.fillRect( 0, 0, w, h );
+  ctx.shadowBlur = .5;
+  
+  for( var i = 0; i < lines.length; ++i ) 
+    
+    if( lines[ i ].step() ) { // if true it's dead
+      
+      lines.splice( i, 1 );
+      --i;
+      
+    }
+  
+  // spawn new
+  
+  ++timeSinceLast
+  
+  if( lines.length < maxLines && timeSinceLast > 10 && Math.random() < .5 ) {
+    
+    timeSinceLast = 0;
+    
+    lines.push( new Line( starter ) );
+    
+    // cover the middle;
+    ctx.fillStyle = ctx.shadowColor = getColor( starter.x );
+    ctx.beginPath();
+    ctx.arc( starter.x, starter.y, initialWidth, 0, Math.PI * 2 );
+    ctx.fill();
+  }
+}
+
+function Line( parent ) {
+  
+  this.x = parent.x | 0;
+  this.y = parent.y | 0;
+  this.width = parent.width / 1.25;
+  
+  do {
+    
+    var dir = dirs[ ( Math.random() * dirs.length ) |0 ];
+    this.vx = dir[ 0 ];
+    this.vy = dir[ 1 ];
+    
+  } while ( 
+    ( this.vx === -parent.vx && this.vy === -parent.vy ) || ( this.vx === parent.vx && this.vy === parent.vy) );
+  
+  this.vx *= speed;
+  this.vy *= speed;
+  
+  this.dist = ( Math.random() * ( maxDist - minDist ) + minDist );
+  
+}
+Line.prototype.step = function() {
+  
+  var dead = false;
+  
+  var prevX = this.x,
+      prevY = this.y;
+  
+  this.x += this.vx;
+  this.y += this.vy;
+  
+  --this.dist;
+  
+  // kill if out of screen
+  if( this.x < 0 || this.x > w || this.y < 0 || this.y > h )
+    dead = true;
+  
+  // make children :D
+  if( this.dist <= 0 && this.width > 1 ) {
+    
+    // keep yo self, sometimes
+    this.dist = Math.random() * ( maxDist - minDist ) + minDist;
+    
+    // add 2 children
+    if( lines.length < maxLines ) lines.push( new Line( this ) );
+    if( lines.length < maxLines && Math.random() < .5 ) lines.push( new Line( this ) );
+    
+    // kill the poor thing
+    if( Math.random() < .2 ) dead = true;
+  }
+  
+  ctx.strokeStyle = ctx.shadowColor = getColor( this.x );
+  ctx.beginPath();
+  ctx.lineWidth = this.width;
+  ctx.moveTo( this.x, this.y );
+  ctx.lineTo( prevX, prevY );
+  ctx.stroke();
+  
+  if( dead ) return true
+}
+
+init();
+anim();
+
+window.addEventListener( 'resize', function() {
+  
+  w = c.width = window.innerWidth;
+  h = c.height = window.innerHeight;
+  starter.x = w / 2;
+  starter.y = h / 2;
+  
+  init();
+} )
+</script>
+  
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="js/google-map.js"></script>
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+function click (e) {
+  if (!e)
+    e = window.event;
+  if ((e.type && e.type == "contextmenu") || (e.button && e.button == 2) || (e.which && e.which == 3)) {
+    if (window.opera)
+      window.alert("");
+    return false;
+  }
+}
+if (document.layers)
+  document.captureEvents(Event.MOUSEDOWN);
+document.onmousedown = click;
+document.oncontextmenu = click;
+</script>
+
+  </body>
+</html>
